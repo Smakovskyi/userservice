@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gcp:
+      spanner:
+        project-id: hip-shard-253910
+        instance-id: spanner-users
+        database: db_users
+        credentials:
+          location: ${keyLocation:file:/Users/ihorshylo/MyGoogleCloud/hip-shard-253910-f7279690b130.json}
