@@ -7,5 +7,6 @@
 ```.env
 Dspring.profiles.active=<profile_name>
 ```
-where <profile_name> - is your actual profile name
+where <profile_name> - is your actual profile name.
+
 5. Run this new configuration.
