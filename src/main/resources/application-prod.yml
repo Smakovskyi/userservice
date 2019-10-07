@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    gcp:
+      spanner:
+        credentials:
+          location: /var/secrets/google/key.json
