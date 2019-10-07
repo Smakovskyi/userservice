@@ -14,8 +14,8 @@ import org.springframework.cloud.gcp.data.spanner.core.mapping.Table;
 @Table(name = "users")
 public class User {
     @PrimaryKey
-
     private String id;
+
     private String login;
 
     @Column(name = "first_name")
