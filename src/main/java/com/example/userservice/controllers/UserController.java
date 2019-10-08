@@ -1,5 +1,6 @@
 package com.example.userservice.controllers;
 
+import com.example.userservice.entities.User;
 import com.example.userservice.models.UserCreateRequest;
 import com.example.userservice.models.UserDto;
 import com.example.userservice.services.UserService;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<UserDto>> getAllUsers() {
+    public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.findAll());
     }
 

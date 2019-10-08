@@ -4,4 +4,4 @@ spring:
       spanner:
         instance-id: spanner-users
         database: db_users
-        project-id: data-plateau-254915
+      project-id: data-plateau-254915

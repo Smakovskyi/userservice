@@ -20,10 +20,18 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<UserDto> findAll() {
-        return userRepository.findAll().stream()
-                .map(UserService::toUserDto)
-                .collect(Collectors.toList());
+    @Autowired
+    private PublishService publishService;
+
+
+
+    public List<User> findAll() {
+        User test = User.builder().firstName("test").id("test").build();
+        publishService.userCreated(test);
+        return List.of(test);
+        //return userRepository.findAll().stream()
+        //        .map(UserService::toUserDto)
+        //       .collect(Collectors.toList());
     }
 
     public Optional<UserDto> findUser(String id) {
