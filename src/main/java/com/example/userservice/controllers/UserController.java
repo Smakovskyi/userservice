@@ -3,18 +3,20 @@ package com.example.userservice.controllers;
 import com.example.userservice.models.UserCreateRequest;
 import com.example.userservice.models.UserDto;
 import com.example.userservice.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@RequiredArgsConstructor
 public class UserController {
-    @Autowired
-    private UserService userService;
+
+    private final UserService userService;
 
     @GetMapping
     public ResponseEntity<List<UserDto>> getAllUsers() {
@@ -22,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDto> createUser(UserCreateRequest userCreateRequest) {
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserCreateRequest userCreateRequest) {
         UserDto createdUser = userService.createUser(userCreateRequest);
 
         URI location = URI.create(String.format("/api/users/%s", createdUser.getIdentifier()));

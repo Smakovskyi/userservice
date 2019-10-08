@@ -1,11 +1,13 @@
 package com.example.userservice.models;
 
-import lombok.Builder;
 import lombok.Value;
 
+import javax.validation.constraints.NotBlank;
+
 @Value
-@Builder
 public class UserCreateRequest {
+    @NotBlank
     private final String firstName;
+    @NotBlank
     private final String lastName;
 }
