@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gcp:
+      spanner:
+        project-id: ks-535
+        instance-id: ks-local-dev
+        database: db_users
+        credentials:
+          location: file:D:\gcp\keys\ks-535-bdaf96c28d30.json

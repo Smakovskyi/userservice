@@ -5,7 +5,7 @@
 3. Go to Run/Debug Configuration and create your own spring boot configuration.
 4. In active profiles filed add your <profile_name> from step 1 or in VM options field add
 ```.env
-Dspring.profiles.active=<profile_name>
+-Dspring.profiles.active=<profile_name>
 ```
 where <profile_name> - is your actual profile name.
 
