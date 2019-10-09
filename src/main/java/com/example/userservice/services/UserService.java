@@ -17,22 +17,23 @@ import java.util.stream.Collectors;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     public List<UserDto> findAll() {
         return userRepository.findAll().stream()
-                .map(UserMapper.INSTANCE::userToUserDto)
+                .map(userMapper::userToUserDto)
                 .collect(Collectors.toList());
     }
 
     public Optional<UserDto> findUser(String id) {
         return userRepository.findById(id)
-                .map(UserMapper.INSTANCE::userToUserDto);
+                .map(userMapper::userToUserDto);
     }
 
     public UserDto createUser(UserCreateRequest userCreateRequest) {
-        User userToSave = UserMapper.INSTANCE.userCreateRequestToUserEntity(userCreateRequest);
+        User userToSave = userMapper.userCreateRequestToUserEntity(userCreateRequest);
 
         User createdUser = userRepository.save(userToSave);
-        return UserMapper.INSTANCE.userToUserDto(createdUser);
+        return userMapper.userToUserDto(createdUser);
     }
 }
