@@ -13,7 +13,13 @@ spring:
       logging:
         enabled: true
       credentials:
-        location: file:D:\gcp\keys\ks-535-owner-c2600449e8fa.json
+        location: file:D:\gcp\keys\ks-535-logs-writer.json
       project-id: ks-535
-server:
-  port: 8080
+  sleuth:
+    sampler:
+      probability: 1.0
+
+#logging:
+#  level:
+#    root: debug
+#    org.springframework.web: debug

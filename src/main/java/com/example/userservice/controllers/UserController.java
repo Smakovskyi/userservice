@@ -4,6 +4,7 @@ import com.example.userservice.models.UserCreateRequest;
 import com.example.userservice.models.UserDto;
 import com.example.userservice.services.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/users")
@@ -20,6 +22,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<UserDto>> getAllUsers() {
+        log.info("Some dummy message");
         return ResponseEntity.ok(userService.findAll());
     }
 

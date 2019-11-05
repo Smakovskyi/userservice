@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gcp:
+      spanner:
+        project-id: ks-535
+        instance-id: ks-local-dev
+        database: db_users
+        credentials:
+          location: classpath:keys/ks-535-bdaf96c28d30.json
+      trace:
+        credentials:
+          location: classpath:keys/ks-535-owner.json
+      logging:
+        enabled: true
+#      credentials:
+#        location: classpath:ks-535-owner.json
+      project-id: ks-535
